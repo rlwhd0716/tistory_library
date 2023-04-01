@@ -1,10 +1,7 @@
 package com.example.appstatecheck
 
 import android.util.Log
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ProcessLifecycleOwner
+import androidx.lifecycle.*
 
 class Application: android.app.Application(), LifecycleObserver {
 
@@ -15,7 +12,7 @@ class Application: android.app.Application(), LifecycleObserver {
     override fun onCreate() {
         super.onCreate()
 
-//        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
@@ -29,5 +26,32 @@ class Application: android.app.Application(), LifecycleObserver {
         Log.d(javaClass.name, "onBackground")
         isBackground = true
     }
-
 }
+
+/*
+class Application: android.app.Application(), LifecycleEventObserver {
+
+    companion object {
+        var isBackground = true
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+
+        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+    }
+
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        when(event) {
+            Lifecycle.Event.ON_RESUME -> {
+                Log.d(javaClass.name, "onForeground")
+                isBackground = false
+            }
+            Lifecycle.Event.ON_STOP -> {
+                Log.d(javaClass.name, "onBackground")
+                isBackground = true
+            }
+            else -> {}
+        }
+    }
+}*/
