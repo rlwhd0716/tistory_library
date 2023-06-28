@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '10.0'
+
+target 'DI_Test' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DI_Test
+	pod 'Alamofire', '~> 5.2'
+	pod 'Swinject'
+	pod 'SwinjectStoryboard'
+  pod 'RxSwift', '6.1.0'
+  pod 'RxCocoa', '6.1.0'
+end
