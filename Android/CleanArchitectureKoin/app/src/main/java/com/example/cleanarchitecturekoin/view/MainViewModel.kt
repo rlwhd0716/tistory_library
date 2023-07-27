@@ -1,4 +1,7 @@
 package com.example.cleanarchitecturekoin.view
 
-class MainViewModel {
+import com.example.cleanarchitecturekoin.lib.ui.AbsViewModel
+
+class MainViewModel: AbsViewModel() {
+
 }

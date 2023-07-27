@@ -1,12 +1,22 @@
 package com.example.cleanarchitecturekoin.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.cleanarchitecturekoin.R
+import com.example.cleanarchitecturekoin.databinding.ActivityMainBinding
+import com.example.cleanarchitecturekoin.lib.ui.AbsActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AbsActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+    }
+
+    override var vmApply: (MainViewModel.() -> Unit)? = {
+
+    }
+
+    override var bindingApply: (ActivityMainBinding.() -> Unit)? = {
+
     }
 }

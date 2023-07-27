@@ -1,4 +1,5 @@
 plugins {
+    id 'kotlin-kapt'
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
@@ -15,6 +16,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 
     buildTypes {
@@ -58,18 +63,18 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.6.1'
 
     // Livedata and Lifecycle
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
-//    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
-//    testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
-//    testImplementation "androidx.arch.core:core-testing:$arch_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+    testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
 
     // Retrofit and okhttp
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
