@@ -28,7 +28,7 @@ data class BaseResponse<T : Parcelable>(
     fun getFirst(): T = result[0]
     override fun intercept(chain: Interceptor.Chain): Response {
         val filename = chain.request().url.pathSegments.last()
-        Log.e("intercept ::: ", filename)
+        Log.i("intercept ::: ", filename)
         return Response.Builder().build()
     }
 }
