@@ -25,7 +25,7 @@ abstract class AbsActivity<B : ViewDataBinding, VM : AbsViewModel>(layoutId: Int
 
     @Suppress("UNCHECKED_CAST")
     protected val viewModel by ViewModelCompat.viewModel(
-        owner = lazyOf(this),
+        owner = this@AbsActivity,
         clazz = ((javaClass.genericSuperclass as ParameterizedType?)
             ?.actualTypeArguments
             ?.get(1) as Class<VM>)
