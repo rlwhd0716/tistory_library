@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturehilt.domain
+package com.example.cleanarchitecturehilt.domain.code
 
 enum class NetworkCode(val code: String) {
     SUCCESS("100"),
