@@ -55,6 +55,10 @@ android {
 
 dependencies {
 
+    // Clean Architecture
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":domain")))
+
     // project default
     implementation(libs.bundles.ui)
     testImplementation(libs.test.junit)
