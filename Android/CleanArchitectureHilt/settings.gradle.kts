@@ -16,4 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "CleanArchitectureHilt"
 include(":app")
- 
+include(":data")
+include(":domain")
