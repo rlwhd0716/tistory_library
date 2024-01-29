@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturekoin.view
+package com.example.cleanarchitecturekoin.adapter
 
 import com.example.cleanarchitecturekoin.R
 import com.example.cleanarchitecturekoin.databinding.ItemMainBinding
