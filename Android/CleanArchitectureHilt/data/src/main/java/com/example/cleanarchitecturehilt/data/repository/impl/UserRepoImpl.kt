@@ -2,6 +2,7 @@ package com.example.cleanarchitecturehilt.data.repository.impl
 
 import com.example.cleanarchitecturehilt.data.datasource.local.UserLocalDataSource
 import com.example.cleanarchitecturehilt.data.datasource.remote.UserRemoteDataSource
+import com.example.cleanarchitecturehilt.data.entity.UserDB
 import com.example.cleanarchitecturehilt.domain.model.request.Login
 import com.example.cleanarchitecturehilt.domain.model.response.User
 import com.example.cleanarchitecturehilt.domain.repository.UserRepo
@@ -28,7 +29,16 @@ class UserRepoImpl @Inject constructor(
      * @local insert 실행
      */
     override suspend fun insertUser(data: User) =
-        safeDBCall { local.insertUser(data) }
+        safeDBCall {
+            local.insertUser(
+                UserDB(
+                    sn = data.sn,
+                    id = data.sn,
+                    name = data.name,
+                    type = data.type,
+                )
+            )
+        }
 
     /**
      * 사용자 정보 조회

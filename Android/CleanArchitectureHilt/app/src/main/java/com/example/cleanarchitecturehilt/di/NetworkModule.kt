@@ -86,7 +86,7 @@ object NetworkModule {
     @Singleton
     fun provideApiService(retrofit: Retrofit.Builder): ApiService {
         return retrofit
-            .baseUrl(BuildConfig.API_URL)
+            .baseUrl("")
             .build()
             .create(ApiService::class.java)
     }

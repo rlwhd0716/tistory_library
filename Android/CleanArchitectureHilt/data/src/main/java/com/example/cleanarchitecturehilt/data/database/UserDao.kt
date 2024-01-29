@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.Companion.REPLACE
 import androidx.room.Query
+import com.example.cleanarchitecturehilt.data.entity.UserDB
 import com.example.cleanarchitecturehilt.domain.model.response.User
 
 @Dao
@@ -19,10 +20,10 @@ interface UserDao {
     fun getUserPassword(id: String): User
 
     @Insert(onConflict = REPLACE) // PrimaryKey 중복 시, 덮어쓰기
-    fun insertUser(user: User)
+    fun insertUser(user: UserDB)
 
     @Delete
-    fun deleteUser(user: User)
+    fun deleteUser(user: UserDB)
 
     @Query("DELETE FROM UserDB")
     fun deleteAll()

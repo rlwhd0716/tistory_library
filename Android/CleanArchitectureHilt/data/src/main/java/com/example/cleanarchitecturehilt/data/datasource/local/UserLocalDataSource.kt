@@ -2,6 +2,7 @@ package com.example.cleanarchitecturehilt.data.datasource.local
 
 import android.os.Parcelable
 import com.example.cleanarchitecturehilt.data.database.UserDao
+import com.example.cleanarchitecturehilt.data.entity.UserDB
 import com.example.cleanarchitecturehilt.domain.code.NetworkCode
 import com.example.cleanarchitecturehilt.domain.model.request.Login
 import com.example.cleanarchitecturehilt.domain.model.response.User
@@ -24,7 +25,7 @@ class UserLocalDataSource @Inject constructor(private val dao: UserDao) {
         result = dao.getUser(employerSn)
     )
 
-    suspend fun insertUser(data: User): BaseResponseObject<User> {
+    suspend fun insertUser(data: UserDB): BaseResponseObject<User> {
         dao.insertUser(data)
         return BaseResponseObject(
             code = NetworkCode.QUERY.code,
@@ -33,7 +34,7 @@ class UserLocalDataSource @Inject constructor(private val dao: UserDao) {
         )
     }
 
-    suspend fun deleteUser(data: User): BaseResponse<Parcelable> {
+    suspend fun deleteUser(data: UserDB): BaseResponse<Parcelable> {
         dao.deleteUser(data)
         return BaseResponse(
             code = NetworkCode.QUERY.code,
