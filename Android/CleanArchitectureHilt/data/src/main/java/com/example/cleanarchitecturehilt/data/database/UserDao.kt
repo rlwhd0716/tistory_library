@@ -13,11 +13,11 @@ interface UserDao {
     @Query("SELECT * FROM UserDB")
     fun getAll(): List<User>
 
-    @Query("SELECT * FROM UserDB WHERE sn=:data")
-    fun getUser(data: String): User
+    @Query("SELECT * FROM UserDB WHERE USER_SN=:userSn")
+    fun getUser(userSn: String): User
 
-    @Query("SELECT * FROM UserDB WHERE id=:id")
-    fun getUserPassword(id: String): User
+    @Query("SELECT * FROM UserDB WHERE USER_ID=:userId")
+    fun getUserPassword(userId: String): User
 
     @Insert(onConflict = REPLACE) // PrimaryKey 중복 시, 덮어쓰기
     fun insertUser(user: UserDB)

@@ -8,11 +8,11 @@ import javax.inject.Singleton
 
 @Singleton
 class LoginUseCase @Inject constructor(private val repo: UserRepo) : BaseUseCase() {
-    fun execute(available: Boolean, request: Login) = setChannelFlow {
-        repo.login(available, request)
+    fun execute(request: Login) = setChannelFlow {
+        repo.login(request)
     }
 
-    operator fun invoke(available: Boolean, request: Login) = setChannelFlow {
-        repo.login(available, request)
+    operator fun invoke(request: Login) = setChannelFlow {
+        repo.login(request)
     }
 }
