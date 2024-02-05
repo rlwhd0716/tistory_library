@@ -61,9 +61,6 @@ android {
         enable = true
     }
 
-    lint.checkReleaseBuilds = false
-    lint.abortOnError = false
-
     flavorDimensions("server")
     productFlavors {
         create("devs") {
@@ -79,6 +76,9 @@ android {
             buildConfigField("String", "WEBVIEW_URL", "\"http://test/\"")
         }
     }
+
+    lint.checkReleaseBuilds = false
+    lint.abortOnError = false
 }
 
 dependencies {
@@ -103,14 +103,17 @@ dependencies {
     implementation(libs.android.timber)
 
     //viewModel, livedata
-//    implementation(libs.bundles.lifecycle)
-//    ksp(libs.lifecycle.compiler)
+    implementation(libs.bundles.lifecycle)
+    ksp(libs.lifecycle.compiler)
 
     // Retrofit, Okhttp, gson
     implementation(libs.bundles.retrofit)
 
     // Coroutine
     implementation(libs.bundles.coroutines)
+
+    // progressDialog
+    implementation(libs.git.progress.dialog)
 }
 
 kapt {

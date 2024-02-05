@@ -1,15 +1,17 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.plugin)
+    alias(libs.plugins.parcelize.plugin)
+    alias(libs.plugins.hilt.plugin)
+    alias(libs.plugins.kapt.plugin)
 }
 
 android {
     namespace = "com.example.webviewexam.domain"
-    compileSdk = 33
+    compileSdk = rootProject.extra["currentSdk"] as Int
 
     defaultConfig {
-        minSdk = 21
+        minSdk = rootProject.extra["minSdk"] as Int
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -25,20 +27,29 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = rootProject.extra["JDK-Version"] as JavaVersion
+        targetCompatibility = rootProject.extra["JDK-Version"] as JavaVersion
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = rootProject.extra["JDK-Target"] as String
     }
 }
 
 dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.android.material)
+    // project default
+    implementation(libs.bundles.ui)
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.android.test.junit)
     androidTestImplementation(libs.android.test.core)
+
+    //hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    // Retrofit, Okhttp, gson
+    implementation(libs.bundles.retrofit)
+
+    // Coroutine
+    implementation(libs.bundles.coroutines)
 }
