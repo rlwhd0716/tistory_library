@@ -7,11 +7,11 @@ import javax.inject.Singleton
 
 @Singleton
 class GetUserUseCase @Inject constructor(private val repo: UserRepo) : BaseUseCase() {
-    fun execute(request: String) = setChannelFlow {
-        repo.getUser(request)
+    fun execute(userSn: String) = setChannelFlow {
+        repo.getUser(userSn)
     }
 
-    operator fun invoke(request: String) = setChannelFlow {
-        repo.getUser(request)
+    operator fun invoke(userSn: String) = setChannelFlow {
+        repo.getUser(userSn)
     }
 }

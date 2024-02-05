@@ -19,10 +19,10 @@ class UserLocalDataSource @Inject constructor(private val dao: UserDao) {
         result = dao.getAll()
     )
 
-    suspend fun getUser(employerSn: String) = BaseResponseObject(
+    suspend fun getUser(userSn: String) = BaseResponseObject(
         code = NetworkCode.QUERY.code,
         message = "사용자 정보 조회 완료",
-        result = dao.getUser(employerSn)
+        result = dao.getUser(userSn)
     )
 
     suspend fun insertUser(data: UserDB): BaseResponseObject<User> {
@@ -49,11 +49,4 @@ class UserLocalDataSource @Inject constructor(private val dao: UserDao) {
             message = "전체 삭제 완료",
         )
     }
-
-    suspend fun localLogin(data: Login) = BaseResponseObject(
-        code = NetworkCode.QUERY.code,
-        message = "임시 로그인 되었습니다. 일부 기능이 제한됩니다.",
-        result = dao.getUserPassword(data.id)
-//        result = dao.getUserPassword(data.emplyrId, data.emplyrPassword)
-    )
 }
