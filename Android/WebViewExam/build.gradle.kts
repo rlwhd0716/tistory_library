@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.parcelize.plugin) apply false
     alias(libs.plugins.kapt.plugin) apply false
     alias(libs.plugins.hilt.plugin) apply false
-    alias(libs.plugins.ksp.plugin) apply false
+//    alias(libs.plugins.ksp.plugin) apply false
 }
 
 ext.apply {

@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.plugin)
     alias(libs.plugins.parcelize.plugin)
     alias(libs.plugins.hilt.plugin)
-    alias(libs.plugins.ksp.plugin)
+//    alias(libs.plugins.ksp.plugin)
     alias(libs.plugins.kapt.plugin)
 }
 
@@ -72,8 +72,8 @@ android {
         create("real") {
             dimension = "server"
             buildConfigField("Boolean", "DEBUG", "false")
-            buildConfigField("String", "API_URL", "\"http://test/api/v1\"")
-            buildConfigField("String", "WEBVIEW_URL", "\"http://test/\"")
+            buildConfigField("String", "API_URL", "\"https://m.naver.com/\"")
+            buildConfigField("String", "WEBVIEW_URL", "\"https://m.naver.com/\"")
         }
     }
 
@@ -104,7 +104,7 @@ dependencies {
 
     //viewModel, livedata
     implementation(libs.bundles.lifecycle)
-    ksp(libs.lifecycle.compiler)
+    kapt(libs.lifecycle.compiler)
 
     // Retrofit, Okhttp, gson
     implementation(libs.bundles.retrofit)
