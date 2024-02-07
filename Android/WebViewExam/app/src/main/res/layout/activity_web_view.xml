@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,9 +9,18 @@
             type="com.example.webviewexam.view.WebViewViewModel" />
     </data>
 
-    <WebView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.WebViewActivity" />
+        android:orientation="vertical"
+        tools:context=".view.WebViewActivity">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            addJavascriptInterface="@{vm.javaScriptBridge}"
+            loadUrl="@{vm.mainUrl}"
+            setWebChromeClient="@{vm.chromeClient}"
+            setWebViewClient="@{vm.client}" />
+    </LinearLayout>
 </layout>

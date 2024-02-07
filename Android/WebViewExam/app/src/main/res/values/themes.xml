@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.WebViewExam" parent="Base.Theme.WebViewExam" />
+
+    <style name="Theme.WebviewDialog" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
 </resources>
