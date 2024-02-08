@@ -62,16 +62,16 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components.getByName("release"))
 
-                groupId = "com.github.tistory_library"
-                artifactId = "lib_test"
+                groupId = "com.github.rlwhd0716"
+                artifactId = "tistory_library"
                 version = "0.0.1"
             }
             // Creates a Maven publication called “debug”.
             create<MavenPublication>("debug") {
                 from(components.getByName("debug"))
 
-                groupId = "com.leegi.test"
-                artifactId = "com.leegi.lib_test"
+                groupId = "com.github.rlwhd0716"
+                artifactId = "tistory_library"
                 version = "0.0.1"
             }
         }
