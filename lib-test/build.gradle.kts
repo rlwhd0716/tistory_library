@@ -63,7 +63,7 @@ afterEvaluate {
                 from(components.getByName("release"))
 
                 groupId = "com.github.rlwhd0716"
-                artifactId = "tistory_library/Test"
+                artifactId = "tistory_library"
                 version = "0.0.1"
             }
             // Creates a Maven publication called “debug”.
@@ -71,7 +71,7 @@ afterEvaluate {
                 from(components.getByName("debug"))
 
                 groupId = "com.github.rlwhd0716"
-                artifactId = "tistory_library/Test"
+                artifactId = "tistory_library"
                 version = "0.0.1"
             }
         }
