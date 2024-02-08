@@ -62,8 +62,8 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components.getByName("release"))
 
-                groupId = "com.github.rlwhd0716"
-                artifactId = "tistory_library"
+                groupId = "com.leegi.lib_test"
+                artifactId = "lib-test"
                 version = "0.0.1"
             }
             // Creates a Maven publication called “debug”.
