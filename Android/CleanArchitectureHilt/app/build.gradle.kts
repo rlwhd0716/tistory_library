@@ -59,6 +59,9 @@ dependencies {
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":domain")))
 
+    implementation("com.github.rlwhd0716:tistory_library:Test_0.0.1")
+
+
     // project default
     implementation(libs.bundles.ui)
     testImplementation(libs.test.junit)
