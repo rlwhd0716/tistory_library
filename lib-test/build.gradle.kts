@@ -68,8 +68,8 @@ afterEvaluate {
             create<MavenPublication>("debug") {
                 from(components.getByName("debug"))
 
-                groupId = "com.github.rlwhd0716"
-                artifactId = "tistory_library"
+                groupId = "com.leegi.lib_test"
+                artifactId = "lib-test"
                 version = "0.0.1"
             }
         }
